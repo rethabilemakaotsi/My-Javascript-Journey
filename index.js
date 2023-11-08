@@ -43,37 +43,147 @@ console.log(`numb1/numb2 = ${results} remainder ${remainder}`)
 
 
 // B. Task 2:Data Types
-// 1. Define the following data types with your own contents[ 'integer', 'decimal', 'string', 'array'(minimum: 3 items), 'Object'(minimum: 4 values)]
-let variable1 = 100
-let variable2 = 3.5656
-let variable3 = 'hello world'
-let variable4 = [22,'rethabile',false];
+// 1. Define thefollowing data types with your own contents[ 'integer', 'decimal', 'string', 'array'(minimum: 3 items), 'Object'(minimum: 4 values)]
+let number = 100
+let decimal= 3.5656
+let string = 'hello world'
+let array =[1,2,3];
+let fruits= ['apple','orange','mengo' ];
+
 // 2. Once you’ve created the variables, display them to the console
-console.log(variable1 )
-console.log(variable2 )
-console.log(variable3 )
-console.log(variable4 )
+console.log(number)
+console.log(decimal )
+console.log(string )
+console.log(array)
+console.log(fruits)
+
+
 
 // 3. Use the ‘typeof’ function to check each variable
-console.log(typeof variable1)
-console.log(typeof variable2)
-console.log(typeof variable3)
-console.log(typeof variable4)
+console.log(typeof number)
+console.log(typeof decimal)
+console.log(typeof string )
+console.log(typeof array )
+console.log(typeof fruits)
+
 // 4. Create an array with numbers and strings. Comment what data type you expect this tobe. Then use the ‘typeof’ function on this array
 let data =[22,'rethabile']
 console.log(typeof data)
 // 5. Create a null variable and an undefined variable
 let win = null
-let car=undefined
+let car;
 
 
 // ***********C. Task 3. functions and contional statements************
 // N.B. READ WITH UNDERSTANDING!!!
-//  1.  Create 3 functions to convert R1000 into dollars, euros and pounds. Take function naming into consideration!
+//  1.  Create 3 functions to convert R1000 into dollars, euros and pounds. Take function naming into consideratio
+// Function to convert R1000 to dollars
+function convertToDollars(rands) {
+    const exchangeRate = 0.067; // 1 Rand to USD
+    const dollars = rands * exchangeRate;
+    return dollars;
+  }
+  
+  // Function to convert R1000 to euros
+  function convertToEuros(rands) {
+    const exchangeRate = 0.059; // 1 Rand to EUR
+    const euros = rands * exchangeRate;
+    return euros;
+  }
+  
+  // Function to convert R1000 to pounds
+  function convertToPounds(rands) {
+    const exchangeRate = 0.049; // 1 Rand to GBP
+    const pounds = rands * exchangeRate;
+    return pounds;
+  }
+  
+  const rands = 1000; // R1000
+  const dollars = convertToDollars(rands);
+  const euros = convertToEuros(rands);
+  const pounds = convertToPounds(rands);
+  
+  console.log(`R1000 is equivalent to $${dollars.toFixed(2)}`);
+  console.log(`R1000 is equivalent to €${euros.toFixed(2)}`);
+  console.log(`R1000 is equivalent to £${pounds.toFixed(2)}`);
+  
+
+
+
+
 //  2.  Create a function that takes a value and calculates the amount entered including VAT (15%), amount entered should be R400.
 //      Then display the message in the console, "The amount after tax is ...".
+function calculateAmountWithVAT(amount) {
+  // Assuming the VAT rate is 15%
+  const vatRate = 0.15;
+  const vatAmount = amount * vatRate;
+  const totalAmount = amount + vatAmount;
+
+  console.log(`The amount after tax is R${totalAmount}`);
+}
+
+// Call the function with an amount of R400
+calculateAmountWithVAT(400);
+
+  
 //  3.  Declare 3 variables 1stNum, 2ndNum, 3rdNum and assign values of 8, 20 and 14 respectfully. Now write a function that compares “num1” and “num2” and 
 //      displays the larger value.
+// Declare the variables and assign values
+const Num1 = 8;
+const Num2 = 20;
+const Num3 = 14;
+
+// Function to compare and display the larger value
+function compareAndDisplayLarger(num1, num2) {
+  if (num1 > num2) {
+    console.log(`The larger value is: ${num1}`);
+  } else if (num2 > num1) {
+    console.log(`The larger value is: ${num2}`);
+  } else {
+    console.log("Both numbers are equal.");
+  }
+}
+
+compareAndDisplayLarger(Num1, Num2);
+
+  
+
+
+  
 //  4.  Write a function that determines whether “num1” is odd or even and displays the
-//      result. (Tip: remember the modulus operator %)
-//  5.  Next, write a JavaScript conditional statement to sort the three numbers(1stNum, 2ndNum, 3rdNum) from largest to smallest.
+//      result. (Tip: remember the modulus operator %
+function isOddOrEven(num1) {
+  if (num1 % 2 === 0) {
+    console.log(`${num1} is even.`);
+  } else {
+    console.log(`${num1} is odd.`);
+  }
+}
+
+isOddOrEven(num1);
+
+//  // Declare the variables and assign values
+const numF= 8;
+const numS = 20;
+const numT = 14;
+
+// Conditional statement to sort the numbers from largest to smallest
+if (numF >= numS && numF >= numT) {
+  if (numS >= numT) {
+    console.log(`Sorted numbers: ${numF}, ${numS}, ${numT}`);
+  } else {
+    console.log(`Sorted numbers: ${numF}, ${numS}, ${numT}`);
+  }
+} else if (numS >= numF && numS >= numT) {
+  if (numF >= numT) {
+    console.log(`Sorted numbers: ${numS}, ${numF}, ${numT}`);
+  } else {
+    console.log(`Sorted numbers: ${numS}, ${numT}, ${numF}`);
+  }
+} else if (numT >= numF && numT >= numS) {
+  if (numF >= numS) {
+    console.log(`Sorted numbers: ${numT}, ${numF}, ${numS}`);
+  } else {
+    console.log(`Sorted numbers: ${numT}, ${numS}, ${numF}`);
+  }
+}
